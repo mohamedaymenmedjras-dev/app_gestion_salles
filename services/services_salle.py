@@ -23,3 +23,11 @@ class ServiceSalle:
         self.dao_salle.update_salle(salle)
 
         return True, "modification de la salle reussi"
+    def supprimer_salle(self, code):
+        code_exists = self.dao_salle.get_salle(code)
+        if code_exists is False:
+            print("aucun code correspondant n a ete trouve")
+        else:
+            self.dao_salle.delete_salle(code)
+            print("suppression de la salle reussi")
+
