@@ -1,4 +1,5 @@
 from data.dao_salle import DataSalle
+from models.salle import Salle
 
 
 class ServiceSalle:
@@ -36,5 +37,11 @@ class ServiceSalle:
             print("aucun code correspondant n a ete trouve")
         else:
             print(code_exists)
-
+    def recuperer_salles(self):
+        table = self.dao_salle.get_salles()
+        if table is False:
+            print("aucune information disponible")
+        else:
+            for salle in table:
+                Salle.afficher_infos(salle)
 

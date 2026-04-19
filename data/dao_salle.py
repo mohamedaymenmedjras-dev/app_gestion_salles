@@ -1,7 +1,7 @@
 import mysql.connector
 import json
 
-
+from models.salle import Salle
 
 
 class DataSalle:
@@ -63,7 +63,26 @@ class DataSalle:
         cursor = con.cursor()
         sql = "select * from salle"
         cursor.execute(sql)
-        salles = cursor.fetchall()
+        salle = cursor.fetchall()
+        con.commit()
         cursor.close()
         con.close()
-        return salles
+
+
+        salles = []
+        for s in salle:
+            salle_ajout = Salle(s[0],s[1],s[2],s[3])
+            salles.append(salle_ajout)
+
+
+        if len(salles) == 0:
+            return False
+        else:
+            return salles
+
+
+
+        if len(salles) == 0:
+            return False
+        else:
+            return salles
