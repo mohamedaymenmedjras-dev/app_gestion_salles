@@ -5,10 +5,10 @@ from services.services_salle import ServiceSalle
 data=DataSalle()
 salle=Salle("s302","Salle 24 metres carres","Informatique",30)
 s2=Salle("z104","Salle 10 metres carres","Chimie",0)
-s3=Salle("z104","Salle 10 metres carres","Chimie",30)
+s3=Salle("z104","Salle 10 metres carres","Chimie",15)
 
 service = ServiceSalle()
-print(service.ajouter_salle(s3))
+print(service.modifier_salle(s3))
 
 
 
