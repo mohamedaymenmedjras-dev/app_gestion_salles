@@ -22,6 +22,10 @@ class DataSalle:
         sql = "insert into salle values (%s,%s,%s,%s)"
         values = (salle.code,salle.description,salle.categorie,salle.capacite)
         cursor.execute(sql,values)
+        con.commit()
+        cursor.close()
+        con.close()
+
     def update_salle(self,salle):
         con = self.get_connection()
         cursor = con.cursor()
@@ -42,3 +46,14 @@ class DataSalle:
         con.commit()
         cursor.close()
         con.close()
+
+    def get_salle(self,code):
+        con = self.get_connection()
+        cursor = con.cursor()
+        sql = "select * from salle where code = %s"
+        values = (code,)
+        cursor.execute(sql, values)
+        salle = cursor.fetchall()
+        cursor.close()
+        con.close()
+        return salle
