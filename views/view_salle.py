@@ -65,3 +65,4 @@ class ViewSalle:
         self.btn_rechercher = ctk.CTkButton(self.frame_action, text="Rechercher")
         self.btn_rechercher.grid(row=0, column=3, padx=10, pady=5)
 
+
