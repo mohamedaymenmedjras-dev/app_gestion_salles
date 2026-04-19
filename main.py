@@ -8,7 +8,7 @@ s2=Salle("z104","Salle 10 metres carres","Chimie",0)
 s3=Salle("z104","Salle 10 metres carres","Chimie",15)
 
 service = ServiceSalle()
-service.supprimer_salle("z104")
+service.rechercher_salle("s302")
 
 
 
